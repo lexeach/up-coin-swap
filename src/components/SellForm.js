@@ -33,7 +33,7 @@ class SellForm extends Component {
             onChange={(event) => {
               const tokenAmount = this.input.value.toString()
               this.setState({
-                output:  ( tokenAmount * this.props.priceStable ) / 10**18 
+                output:  ( tokenAmount * this.props.priceStable ) / 100 
               })
             }}
             ref={(input) => { this.input = input }}
@@ -70,7 +70,7 @@ class SellForm extends Component {
         </div>
         <div className="mb-5">
           <span className="float-left text-muted">Exchange Rate</span>
-          <span className="float-right text-muted">1 DIS = {  (1 * this.props.priceStable ) / 10**18 }  USDT </span>
+          <span className="float-right text-muted">1 DIS = {  (1 * this.props.priceStable ) / 100 }  USDT </span>
 
        
         </div>
