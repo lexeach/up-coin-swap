@@ -31,7 +31,7 @@ class BuyForm extends Component {
             onChange={(event) => {
               const etherAmount = this.input.value.toString()
               this.setState({
-                output: (etherAmount / this.props.priceStable ) * 10**18
+                output: (etherAmount / this.props.priceStable ) * 100
               })
             }}
             ref={(input) => { this.input = input }}
@@ -68,7 +68,7 @@ class BuyForm extends Component {
         </div>
         <div className="mb-5">
           <span className="float-left text-muted">Exchange Rate</span>
-          <span className="float-right text-muted">1 USDT = { parseFloat((1  / this.props.priceStable )  *  10**18) }  DIS</span>
+          <span className="float-right text-muted">1 USDT = { parseFloat((1  / this.props.priceStable )  *  100) }  DIS</span>
         </div>
         <button className="swapButton">SWAP!</button>
       </form>
