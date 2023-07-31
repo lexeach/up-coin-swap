@@ -256,14 +256,14 @@ class App extends Component {
   buyTokens = async (tokenAmount) => {
     console.log("this.state.ethSwap.address: " +this.state.ethSwap.options.address)
     this.setState({ loading: true })
-    await this.state.usdt.methods.approve(this.state.ethSwap.options.address, tokenAmount).send({ from: this.state.account })
+    await this.state.usdt.methods.approve(this.state.ethSwap.options.address, tokenAmount/10000000000000000).send({ from: this.state.account })
     .on('transactionHash', async (hash) => {
 
       // toast("Wow so easy!");
         
     }).then(async ()=>{
       this.setState({ txState: 'onTxHash' })
-        await this.state.ethSwap.methods.StableToToken(tokenAmount).send({ from: this.state.account })        
+        await this.state.ethSwap.methods.StableToToken(tokenAmount/10000000000000000).send({ from: this.state.account })        
         .on('transactionHash', (hash) => {
           this.setState({ txState: 'onTxHash' })
           })
