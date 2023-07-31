@@ -12,7 +12,7 @@ class Navbar extends Component {
           tEXNet="_blank"
           rel="noopener noreferrer"
         >
-          DIS-USDT Swap Exchange
+          UPC-RP Swap Exchange
         </a>
 
         <ul className="navbar-nav px-3">
