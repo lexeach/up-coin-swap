@@ -102,7 +102,7 @@ class App extends Component {
 
 
         // =========== contract address ===========
-        const ethSwapWebSocket = await new web3Socket.eth.Contract(EthSwap, "0x0Eb133376997dC70be1C87ea190F63f4521B7571")
+        const ethSwapWebSocket = await new web3Socket.eth.Contract(EthSwap, "0x42c06Dd84ab0936DBdB904C7F45B5eF51d61dBB0")
         this.setState({ ethSwapWebSocket })
 
 
@@ -132,7 +132,7 @@ class App extends Component {
     const networkId =  await web3.eth.net.getId()
     // const tokenData = Token.networks[networkId]
     // if(tokenData) {
-      const token = new web3.eth.Contract(Token, "0x99eF1AA3361b5dC2015416dFe169f9f7C6538124")
+      const token = new web3.eth.Contract(Token, "0x0D3111Cce7d5f703934467DC2Fe50e45524EC4Fa")
       this.setState({ token })
       let tokenBalance = await token.methods.balanceOf(this.state.account).call()
       this.setState({ tokenBalance: tokenBalance.toString() })
@@ -147,10 +147,10 @@ class App extends Component {
     // Load EthSwap
     // const ethSwapData = await EthSwap.networks[networkId]
     // if(ethSwapData) {
-      const ethSwap = new web3.eth.Contract(EthSwap, "0x0Eb133376997dC70be1C87ea190F63f4521B7571")
+      const ethSwap = new web3.eth.Contract(EthSwap, "0x42c06Dd84ab0936DBdB904C7F45B5eF51d61dBB0")
       this.setState({ ethSwap })
 
-      const tokenPrice = new web3.eth.Contract(TokenPrice, "0xF8A45b5FDb76CFF74B162134B443AdCF534d0952")
+      const tokenPrice = new web3.eth.Contract(TokenPrice, "0xe17dd41F687dfE38BB211c551A568262829FAb8d")
       this.setState({ tokenPrice })
       console.log('ethSwap.options.address:' + this.state.ethSwap.options.address)    
       console.log('tokenPrice.options.address:' + this.state.tokenPrice.options.address)    
@@ -169,7 +169,7 @@ class App extends Component {
  
 
     //load USDT 
-    const usdt = new web3.eth.Contract(Usdt, "0xB42c6b327fDFBF19512fA03E93FC47c01E0cA931")
+    const usdt = new web3.eth.Contract(Usdt, "0xcF1C3457bFdc0dFa067cF97234015C00DaC7d73f")
       this.setState({ usdt })
       let tokenBalanceusdt = await usdt.methods.balanceOf(this.state.account).call()
       this.setState({ tokenBalanceusdt: tokenBalanceusdt.toString() })
